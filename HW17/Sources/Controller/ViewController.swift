@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     //    MARK: - Outlets
     
+    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var randomPass: UIButton!
     @IBOutlet weak var changeColor: UIButton!
     @IBOutlet weak var hackPass: UIButton!
@@ -31,7 +32,15 @@ class ViewController: UIViewController {
     }
     
     //    MARK: - Action
-
+    @IBAction func stopAction(_ sender: Any) {
+        isHacking = false
+        textFieldPass.text = password
+        labelPass.text = "Your password: " + "\(password)"
+        textFieldPass.isSecureTextEntry = false
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
+    }
+    
     @IBAction func randomAction(_ sender: Any) {
         hackPass.isHidden = false
         textFieldPass.clearButtonMode = .always
@@ -41,6 +50,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hackAction(_ sender: Any) {
+        stopButton.isHidden = false
         queue.async {
             self.bruteForce(passwordToUnlock: self.password)
         }
@@ -75,11 +85,14 @@ class ViewController: UIViewController {
             password = generateBruteForce(password, fromArray: allowedCharacters)
             if isHacking {
                 DispatchQueue.main.async(execute: hackPassword)
+            } else {
+                break
             }
             print(password)
         }
-        
-        DispatchQueue.main.async(execute: resultPassword)
+        if isHacking {
+            DispatchQueue.main.async(execute: resultPassword)
+        }
     }
     
     func generatePassword() -> String {

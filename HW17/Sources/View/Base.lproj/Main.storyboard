@@ -85,15 +85,30 @@
                                     <action selector="changeColorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="utU-OF-NTC"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-7u-fXl">
+                                <rect key="frame" x="50" y="680" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stop">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jt1-ux-Ou5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wEL-9T-h62" secondAttribute="trailing" constant="20" id="344-gA-Mko"/>
                             <constraint firstItem="lq4-fz-XmS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="7tw-iN-hTY"/>
+                            <constraint firstItem="lq4-fz-XmS" firstAttribute="top" secondItem="SKx-7u-fXl" secondAttribute="bottom" constant="50" id="8vF-pv-QJB"/>
                             <constraint firstItem="wEL-9T-h62" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-98.25" id="AQD-yI-WzX"/>
+                            <constraint firstItem="SKx-7u-fXl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="FRV-kB-tPs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lq4-fz-XmS" secondAttribute="bottom" constant="70" id="Qh8-nf-pGx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lq4-fz-XmS" secondAttribute="trailing" constant="50" id="af7-fb-E9o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SKx-7u-fXl" secondAttribute="trailing" constant="50" id="iQu-P7-87y"/>
                             <constraint firstItem="wEL-9T-h62" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mqo-cF-krO"/>
                         </constraints>
                     </view>
@@ -103,6 +118,7 @@
                         <outlet property="hackPass" destination="Q02-Ve-Uni" id="g7b-nV-CK6"/>
                         <outlet property="labelPass" destination="igf-xG-h1O" id="X1n-uF-CaQ"/>
                         <outlet property="randomPass" destination="niB-AI-HuD" id="41s-a0-O4k"/>
+                        <outlet property="stopButton" destination="SKx-7u-fXl" id="nw5-cn-7nA"/>
                         <outlet property="textFieldPass" destination="4uL-3v-yh2" id="TW1-ea-Jsl"/>
                     </connections>
                 </viewController>

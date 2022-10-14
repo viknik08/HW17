@@ -33,12 +33,14 @@ class ViewController: UIViewController {
     
     //    MARK: - Action
     @IBAction func stopAction(_ sender: Any) {
-        isHacking = false
-        textFieldPass.text = password
-        labelPass.text = "Your password: " + "\(password)"
-        textFieldPass.isSecureTextEntry = false
-        self.activityIndicator.isHidden = true
-        self.activityIndicator.stopAnimating()
+            isHacking = false
+        DispatchQueue.main.async {
+            self.textFieldPass.text = self.password
+            self.labelPass.text = "Your password: " + "\(self.password)"
+            self.textFieldPass.isSecureTextEntry = false
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     @IBAction func randomAction(_ sender: Any) {
@@ -50,7 +52,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hackAction(_ sender: Any) {
-        stopButton.isHidden = false
         queue.async {
             self.bruteForce(passwordToUnlock: self.password)
         }
@@ -110,16 +111,10 @@ class ViewController: UIViewController {
                 self.view.backgroundColor = .systemGray
                 self.labelPass.textColor = .white
                 self.activityIndicator.color = .white
-                self.hackPass.tintColor = .white
-                self.randomPass.tintColor = .white
-                self.changeColor.tintColor = .white
             } else {
                 self.view.backgroundColor = .white
                 self.labelPass.textColor = .black
                 self.activityIndicator.color = .black
-                self.hackPass.tintColor = .systemBlue
-                self.randomPass.tintColor = .systemBlue
-                self.changeColor.tintColor = .systemBlue
             }
         }
     }
@@ -138,12 +133,13 @@ extension ViewController: UITextFieldDelegate {
             let updataText = text.replacingCharacters(in: rangeText, with: string)
             password = updataText
         }
+        textFieldPass.isSecureTextEntry = true
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textFieldPass.clearButtonMode = .always
-        textFieldPass.isSecureTextEntry = true
         hackPass.isHidden = false
+        return true
     }
 }

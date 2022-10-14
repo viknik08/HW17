@@ -28,6 +28,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                     </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="randomAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4a-PN-6re"/>
@@ -40,6 +41,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                     </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="hackAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiZ-4M-o1o"/>
@@ -80,18 +82,20 @@
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="changeColorAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="utU-OF-NTC"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-7u-fXl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-7u-fXl">
                                 <rect key="frame" x="50" y="680" width="314" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Stop">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jt1-ux-Ou5"/>
@@ -133,6 +137,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

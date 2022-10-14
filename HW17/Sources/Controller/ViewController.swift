@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     @IBAction func stopAction(_ sender: Any) {
             isHacking = false
         DispatchQueue.main.async {
+            self.stopButton.isHidden = true
             self.textFieldPass.text = self.password
             self.labelPass.text = "Your password: " + "\(self.password)"
             self.textFieldPass.isSecureTextEntry = false
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hackAction(_ sender: Any) {
+        stopButton.isHidden = false
         queue.async {
             self.bruteForce(passwordToUnlock: self.password)
         }
